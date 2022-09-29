@@ -40,4 +40,25 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="55dp"
         app:srcCompat="@drawable/logo_santotomas" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="202dp"
+        android:layout_marginBottom="81dp"
+        android:text="Iniciar Session" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="61dp"
+        android:layout_marginBottom="81dp"
+        android:onClick="sendInicio"
+        android:text="Registrarse" />
 </RelativeLayout>
