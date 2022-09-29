@@ -42,7 +42,7 @@
         app:srcCompat="@drawable/logo_santotomas" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnIniciarSession"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -52,7 +52,7 @@
         android:text="Iniciar Session" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnRegistro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
