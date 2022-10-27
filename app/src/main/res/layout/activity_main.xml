@@ -15,10 +15,12 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="28dp"
         android:layout_marginTop="349dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="Correo"
         android:inputType="textEmailAddress"
-        android:autofillHints="" />
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
@@ -30,7 +32,9 @@
         android:autofillHints=""
         android:ems="10"
         android:hint="Contraseña"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -47,8 +51,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="202dp"
+        android:layout_marginEnd="215dp"
         android:layout_marginBottom="81dp"
+        android:backgroundTint="#013003"
         android:text="Iniciar Session" />
 
     <Button
@@ -59,6 +64,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="61dp"
         android:layout_marginBottom="81dp"
-        android:onClick="sendInicio"
+        android:backgroundTint="#013003"
+        android:onClick="sendRegistro"
         android:text="Registrarse" />
 </RelativeLayout>
