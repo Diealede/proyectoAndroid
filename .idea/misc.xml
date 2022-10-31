@@ -4,9 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Ingenieria en Informatica-IPST/Codigos de programacion/proyectoAndroid/app/src/main/res/drawable/splash_screen.xml" value="0.2105" />
-        <entry key="..\:/Ingenieria en Informatica-IPST/Codigos de programacion/proyectoAndroid/app/src/main/res/layout/activity_inicio.xml" value="0.20416666666666666" />
+        <entry key="..\:/Ingenieria en Informatica-IPST/Codigos de programacion/proyectoAndroid/app/src/main/res/layout/activity_gyroscope.xml" value="0.1" />
+        <entry key="..\:/Ingenieria en Informatica-IPST/Codigos de programacion/proyectoAndroid/app/src/main/res/layout/activity_inicio.xml" value="0.25" />
         <entry key="..\:/Ingenieria en Informatica-IPST/Codigos de programacion/proyectoAndroid/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Ingenieria en Informatica-IPST/Codigos de programacion/proyectoAndroid/app/src/main/res/layout/activity_registro.xml" value="0.25" />
+        <entry key="..\:/Ingenieria en Informatica-IPST/Codigos de programacion/proyectoAndroid/app/src/main/res/layout/activity_rotation_vector.xml" value="0.1" />
         <entry key="..\:/Ingenieria en Informatica-IPST/Codigos de programacion/proyectoAndroid/app/src/main/res/layout/activity_splash_screen.xml" value="0.20416666666666666" />
       </map>
     </option>

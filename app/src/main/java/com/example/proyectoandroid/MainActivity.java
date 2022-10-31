@@ -31,4 +31,4 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, registro.class);
         startActivity(intent);
     }
-    }
+}
