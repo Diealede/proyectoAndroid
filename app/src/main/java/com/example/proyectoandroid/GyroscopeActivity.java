@@ -7,10 +7,9 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.proyectoandroid.R;
 
 public class GyroscopeActivity extends AppCompatActivity {
     private static final String TAG = "Ejemplo Sensor";
@@ -25,18 +24,22 @@ public class GyroscopeActivity extends AppCompatActivity {
         sensorManager =
                 (SensorManager) getSystemService(SENSOR_SERVICE);
 // Using gyroscope sensor
-        gyroscopeSensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
+        gyroscopeSensor =
+                sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
         if(gyroscopeSensor == null) {
-            Log.e(TAG, "Gyroscope sensor not available.");
+            Log.e(TAG, "Giroscopio no disponible.");
             finish();
         }
         gyroscopeSensorListener = new SensorEventListener() {
             @Override
             public void onSensorChanged(SensorEvent sensorEvent) {
                 if(sensorEvent.values[2] > 0.5f) { // anticlockwise
-                    getWindow().getDecorView().setBackgroundColor(Color.CYAN);
-                } else if(sensorEvent.values[2] < -0.5f) { // clockwise
-                    getWindow().getDecorView().setBackgroundColor(Color.MAGENTA);
+                    getWindow().getDecorView().setBackgroundColor(Color.BLUE);
+                    Toast.makeText(getApplicationContext(),"giro en sentido anti-horario", Toast.LENGTH_LONG).show();
+                }
+                else if(sensorEvent.values[2] < -0.5f) { // clockwise
+                    getWindow().getDecorView().setBackgroundColor(Color.YELLOW);
+                    Toast.makeText(getApplicationContext(),"giro en sentido horario", Toast.LENGTH_LONG).show();
                 }
             }
             @Override

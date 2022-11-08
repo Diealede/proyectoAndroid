@@ -6,6 +6,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,7 +18,7 @@ public class RotationVectorActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rotation_vector);
+        setContentView(R.layout.activity_rotation);
         sensorManager =
                 (SensorManager) getSystemService(SENSOR_SERVICE);
         rotationVectorSensor =
@@ -26,26 +27,29 @@ public class RotationVectorActivity extends AppCompatActivity {
             @Override
             public void onSensorChanged(SensorEvent sensorEvent) {
                 float[] rotationMatrix = new float[16];
-                SensorManager.getRotationMatrixFromVector(rotationMatrix,
-                        sensorEvent.values);
+                SensorManager.getRotationMatrixFromVector(rotationMatrix, sensorEvent.values);
+
                 float[] remappedRotationMatrix = new float[16];
-                SensorManager.remapCoordinateSystem(rotationMatrix,
-                        SensorManager.AXIS_X,
-                        SensorManager.AXIS_Z,
-                        remappedRotationMatrix);
+                SensorManager.remapCoordinateSystem(rotationMatrix, SensorManager.AXIS_X, SensorManager.AXIS_Z, remappedRotationMatrix);
+
                 float[] orientations = new float[3];
-                SensorManager.getOrientation(remappedRotationMatrix,
-                        orientations);
+                SensorManager.getOrientation(remappedRotationMatrix, orientations);
+
                 for(int i = 0; i < 3; i++) {
                     orientations[i] =
                             (float)(Math.toDegrees(orientations[i]));
                 }
                 if(orientations[2] > 45) {
-                    getWindow().getDecorView().setBackgroundColor(Color.RED);
+                    getWindow().getDecorView().setBackgroundColor(Color.CYAN);
+                    Toast.makeText(getApplicationContext(),"rotación hacia la derecha", Toast.LENGTH_LONG).show();
+
                 } else if(orientations[2] < -45) {
-                    getWindow().getDecorView().setBackgroundColor(Color.GREEN);
+                    getWindow().getDecorView().setBackgroundColor(Color.MAGENTA);
+                    Toast.makeText(getApplicationContext(),"rotación hacia la izquerda", Toast.LENGTH_LONG).show();
+
                 } else if(Math.abs(orientations[2]) < 10) {
-                    getWindow().getDecorView().setBackgroundColor(Color.BLUE);
+                    getWindow().getDecorView().setBackgroundColor(Color.DKGRAY);
+                    Toast.makeText(getApplicationContext(),"no ha habido rotación ", Toast.LENGTH_LONG).show();
                 }
             }
             @Override
@@ -56,9 +60,7 @@ public class RotationVectorActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        sensorManager.registerListener(rvListener,
-                rotationVectorSensor,
-                SensorManager.SENSOR_DELAY_NORMAL);
+        sensorManager.registerListener(rvListener, rotationVectorSensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
     @Override
     protected void onPause() {

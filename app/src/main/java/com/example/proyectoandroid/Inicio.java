@@ -13,13 +13,9 @@ public class Inicio extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
     }
-    public void openProximity(View view) {
-        startActivity(new Intent(Inicio.this, ProximityActivity.class));
-    }
-    public void openGyroscope(View view) {
-        startActivity(new Intent(Inicio.this, GyroscopeActivity.class));
-    }
-    public void openRotationVector(View view) {
-        startActivity(new Intent(Inicio.this, RotationVectorActivity.class));
+
+    public void sendConfiguraciones(View view) {
+        Intent intent = new Intent(this,Configuraciones.class);
+        startActivity(intent);
     }
 }

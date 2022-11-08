@@ -13,7 +13,9 @@ public class registro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
     }
+
     public void sendInicio(View view) {
         Intent intent = new Intent(this,Inicio.class);
-        startActivity(intent);}
+        startActivity(intent);
+    }
 }
